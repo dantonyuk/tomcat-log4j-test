@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <File name="file"
+            fileName="/usr/local/tomcat/logs/web1.log">
+            <PatternLayout>
+                <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+</Configuration>

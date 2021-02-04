@@ -1,0 +1,9 @@
+<web-app>
+    <context-param>
+        <param-name>log4jConfiguration</param-name>
+        <param-value>${WEB1_LOGFILE}</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+    </listener>
+</web-app>
