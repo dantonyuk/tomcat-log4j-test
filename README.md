@@ -22,7 +22,7 @@ export CATALINA_OPTS="-DWEB1_LOGFILE=/config/log4j2-1.xml -DWEB2_LOGFILE=/config
 
 where /config/log4j2-1.xml is
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
     <Appenders>
