@@ -86,3 +86,15 @@ Check web2.log:
 ```bash
 cat logs/web2.log
 ```
+
+Call web3:
+
+```bash
+curl http://localhost:8080/web3/
+```
+
+Check web3.log:
+
+```bash
+cat logs/web3.log
+```
