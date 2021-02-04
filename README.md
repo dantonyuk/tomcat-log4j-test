@@ -1,6 +1,7 @@
 # Test Tomcat Webapps with Different External Logger Configurations
 
-web.xml:
+`web1/web.xml` (same for _web2_, the difference is that `WEB2_LOGFILE`
+property is used instead of `WEB1_LOGFILE`):
 
 ```xml
 <web-app>
@@ -14,13 +15,13 @@ web.xml:
 </web-app>
 ```
 
-setenv.sh
+Content of `setenv.sh`:
 
 ```bash
 export CATALINA_OPTS="-DWEB1_LOGFILE=/config/log4j2-1.xml -DWEB2_LOGFILE=/config/log4j2-2.xml"
 ```
 
-where /config/log4j2-1.xml is
+where `/config/log4j2-1.xml` is
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -40,6 +41,9 @@ where /config/log4j2-1.xml is
     </Loggers>
 </Configuration>
 ```
+
+Same for `/config/log4j2-2.xml`. The only difference is that the file it
+prints out the logs is `/usr/local/tomcat/logs/web2.log`.
 
 ## How to Test
 
@@ -65,4 +69,16 @@ Check web1.log:
 
 ```bash
 cat logs/web1.log
+```
+
+Call web2:
+
+```bash
+curl http://localhost:8080/web2/
+```
+
+Check web2.log:
+
+```bash
+cat logs/web2.log
 ```
