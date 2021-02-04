@@ -45,6 +45,10 @@ where `/config/log4j2-1.xml` is
 Same for `/config/log4j2-2.xml`. The only difference is that the file it
 prints out the logs is `/usr/local/tomcat/logs/web2.log`.
 
+Separate case is _web3_ application. It defines `log4jConfiguration` as
+`WEB3_LOGFILE` but there is not value for this system property. So it
+uses default `log4j2.xml` located in `WEB-INF/classes`.
+
 ## How to Test
 
 Build:
